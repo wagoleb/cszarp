@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Speech.Synthesis;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,8 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(DateTime.Now);
+            SpeechSynthesizer mowa = new SpeechSynthesizer();
+            mowa.Speak("what the fuck is going on?");
         }
     }
 }
