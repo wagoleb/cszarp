@@ -7,47 +7,29 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Nowa
+    public class Kata
     {
-        private string _myprops;
-        public string MyProperty
+        public static string FirstNonRepeatingLetter(string s)
         {
-            get
+            for (int i = 0; i < s.Length; i++)
             {
-                Console.WriteLine("getter");
-                if (!String.IsNullOrEmpty(_myprops))
+                char pierwsza = s.Substring(i)[0];
+                string reszta = s.Substring(i);
+
+                if (reszta.Count(f => f == pierwsza) == 1)
                 {
-                    Console.WriteLine("Nie pusty");
-                    return _myprops;
+                    return pierwsza.ToString();
                 }
-                else
-                {
-                    Console.WriteLine("PUSTY!");
-                    return "";
-                }
+
             }
-            set
-            {
-                Console.WriteLine("setter");
-                if (!String.IsNullOrEmpty(value))
-                {
-                    Console.WriteLine("OK");
-                    _myprops = value;
-                }
-                else
-                {
-                    Console.WriteLine("Pusty");
-                }
-            }
+            return "";
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
-            Nowa obiekt1 = new Nowa();
-            string nowy = obiekt1.MyProperty;
-
+            Console.WriteLine(Kata.FirstNonRepeatingLetter("moonmen"));
         }
     }
 }
