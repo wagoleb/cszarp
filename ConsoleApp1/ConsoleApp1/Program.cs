@@ -21,7 +21,6 @@ namespace ConsoleApp1
         public static int TrailingZeros(int n)
         {
             string number = getFactorial(n).ToString();
-            Console.WriteLine(number);
             int counter = 0;
             for (int i = number.Length-1; i >= 0; i--)
             {
