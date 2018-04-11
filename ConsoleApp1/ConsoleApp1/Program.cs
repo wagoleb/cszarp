@@ -18,6 +18,18 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("dzielenie przez zero");
                 Console.WriteLine(e.Message);
+
+                int? x;
+                x = null;
+                x= 56;
+                Nullable<int> y;
+                y = null;
+
+                int z;
+
+                z = x ?? 0;
+                Console.WriteLine(z);
+                Console.ReadKey();
             }
         }
     }
