@@ -22,6 +22,13 @@ namespace ConsoleApp1
 
         }
 
+        public Point(Point p)
+        {
+            // Console.WriteLine("konstruktor kopy");
+            this.X = p.X;
+            this.Y = p.Y;
+        }
+
         public override string ToString()
         {
             return String.Format("({0}, {1})", this.X, this.Y);
