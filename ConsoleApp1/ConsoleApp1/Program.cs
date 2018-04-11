@@ -40,6 +40,15 @@ namespace ConsoleApp1
         {
             return !(a == b);
         }
+
+        public static Point operator +(Point a, Point b)
+        {
+            return new Point((a.X + b.X), (a.Y + b.Y));
+        }
+        public static Point operator -(Point a, Point b)
+        {
+            return new Point((a.X - b.X), (a.Y - b.Y));
+        }
     }
     class Program
     {
@@ -51,6 +60,8 @@ namespace ConsoleApp1
             Console.WriteLine(pkt2);
 
             Console.WriteLine(pkt1 == pkt2);
+            Console.WriteLine(pkt1 + pkt2);
+            Console.WriteLine(pkt1 - pkt2);
         }
     }
 }
