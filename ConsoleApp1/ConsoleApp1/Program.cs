@@ -17,6 +17,7 @@ namespace ConsoleApp1
             catch (DivideByZeroException e)
             {
                 Console.WriteLine("dzielenie przez zero");
+                Console.WriteLine(e.Message);
             }
         }
     }
