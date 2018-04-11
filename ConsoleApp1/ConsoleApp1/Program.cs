@@ -56,6 +56,21 @@ namespace ConsoleApp1
         {
             return new Point((a.X - b.X), (a.Y - b.Y));
         }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || this.GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            return (this == (Point)obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return ((this.X * 13) + (this.Y * 23)).GetHashCode();
+        }
     }
     class Program
     {
@@ -63,12 +78,15 @@ namespace ConsoleApp1
         {
             Point pkt1 = new Point(3, 4);
             Console.WriteLine(pkt1);
-            Point pkt2 = new Point(3, 5);
+            Point pkt2 = new Point(4, 3);
             Console.WriteLine(pkt2);
 
             Console.WriteLine(pkt1 == pkt2);
             Console.WriteLine(pkt1 + pkt2);
             Console.WriteLine(pkt1 - pkt2);
+            Console.WriteLine(pkt1.Equals(pkt2));
+            Console.WriteLine(pkt1.GetHashCode());
+            Console.WriteLine(pkt2.GetHashCode());
         }
     }
 }
