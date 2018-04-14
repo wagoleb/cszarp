@@ -2,31 +2,27 @@
 using System.Collections;
 using System.Linq;
 
+
 namespace ConsoleApp1
 {
-    public static class TimeFormat
+    static class StringExtend
     {
-        public static string GetReadableTime(int seconds)
+        public static int CountChar(this string word, char n)
         {
-            TimeSpan t = TimeSpan.FromSeconds( seconds );
-            int tHours;
-            int hours = seconds / 3600;
-            if (hours > 0)
-                {
-                    tHours = hours;
-                }
-            else
-                {
-                    tHours = t.Hours;
-            }
-            return String.Format("{0:D2}:{1:D2}:{2:D2}", tHours, t.Minutes, t.Seconds);
+            return word.Count(x => x == n);
         }
     }
+
     class Program
     {
+
         public static void Main(string[] args)
         {
-            Console.WriteLine(TimeFormat.GetReadableTime(359999));
+            string wyrazenie = "wwwoooojjjteeekkkkkkkkkkkkkkoo";
+            foreach (var item in wyrazenie)
+            {
+                Console.WriteLine("znak {0} wystepuje {1} razy", item, wyrazenie.CountChar(item));
+            }
 
             Console.ReadKey();
         }
